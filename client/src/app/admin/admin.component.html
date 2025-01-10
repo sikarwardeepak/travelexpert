@@ -1,1 +1,27 @@
-<p>admin works!</p>
+<div class="admin-container">
+    <div class="admin-sidebar">
+      <div class="sidebar-header">
+        <h3>Admin Panel</h3>
+      </div>
+      <nav class="nav flex-column">
+        <a class="nav-link" routerLink="./dashboard" routerLinkActive="active">
+          <i class="bi bi-speedometer2"></i> Dashboard
+        </a>
+        <a class="nav-link" routerLink="./users" routerLinkActive="active">
+          <i class="bi bi-people"></i> Users
+        </a>
+        <a class="nav-link" routerLink="./locations" routerLinkActive="active">
+          <i class="bi bi-geo-alt"></i> Locations
+        </a>
+        <a class="nav-link" routerLink="./reviews" routerLinkActive="active">
+          <i class="bi bi-star"></i> Reviews
+        </a>
+        <a class="nav-link" routerLink="./settings" routerLinkActive="active">
+          <i class="bi bi-gear"></i> Settings
+        </a>
+      </nav>
+    </div>
+    <div class="admin-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

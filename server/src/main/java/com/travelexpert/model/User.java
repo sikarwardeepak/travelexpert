@@ -1,6 +1,9 @@
 package com.travelexpert.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -10,25 +13,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Username is mandatory")
+    @Size(min = 3, message = "Username must be at least 3 characters long")
     @Column(nullable = false, unique = true)
     private String username;
 
+    @NotBlank(message = "Password is mandatory")
+    @Size(min = 6, message = "Password must be at least 6 characters long")
     @Column(nullable = false)
     private String password;
 
+    @Email(message = "Email should be valid")
     @Column(nullable = false)
     private String email;
 
     @Column(nullable = false)
     private String role;
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 
     // Getters and Setters
     public Long getId() {
@@ -61,5 +61,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

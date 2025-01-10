@@ -1,0 +1,25 @@
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}
+
+.form-inline {
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-inline .form-control {
+  width: 70%;
+}
+
+.form-inline .btn {
+  width: 30%;
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
